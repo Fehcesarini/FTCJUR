@@ -15,128 +15,6 @@
     <Window.Resources>
         <ResourceDictionary>
             <SolidColorBrush x:Key="ForeGroundMenu" Color="White"/>
-            <Style x:Key="Editor" TargetType="local:CustomEditor">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="local:CustomEditor">
-                            <Border Width="1024"  BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Grid Width="1024" Background="White">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <ScrollViewer x:Name="scroll" Background="white" Height="500"  BorderThickness="0,0,1,0" VerticalScrollBarVisibility="Auto">
-                                        <Grid Margin="10 5">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                            </Grid.RowDefinitions>
-                                            <TextBlock Grid.Row="1" FontFamily="Segoe UI" Foreground="#757575" Text="Detalhes" FontSize="20" Margin="10"/>
-                                            
-                                            <DatePicker x:Name="editstartmonth" materialDesign:HintAssist.Hint="Inicio" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" SelectedDate="{Binding Appointment.StartTime}" SelectedDateFormat="Short" Grid.Row="4" Margin="10 2 10 10" Height="25" />
-                                            <shared:DateTimeEdit x:Name="editstarttime" FontSize="12" FontFamily="Segoe UI" DateTime="{Binding Appointment.StartTime,Mode=OneWay}" Pattern="ShortTime" IsVisibleRepeatButton ="True" IsButtonPopUpEnabled="False" Grid.Row="6" Margin="10 2 10 10"/>
-                                            
-                                            <DatePicker x:Name="editendmonth" materialDesign:HintAssist.Hint="Fim" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" SelectedDate="{Binding Appointment.EndTime}"  SelectedDateFormat="Short" Grid.Row="8" Margin="10 2 10 10" Height="25" />
-                                            <DatePicker x:Name="addstartmonth" materialDesign:HintAssist.Hint="Inicio" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" SelectedDate="{Binding CurrentSelectedDate}"  SelectedDateFormat="Short" Grid.Row="4" Margin="10 2 10 10" Height="25" />
-                                            <shared:DateTimeEdit x:Name="addstarttime" FontFamily="Segoe UI" FontSize="12" DateTime="{Binding CurrentSelectedDate}" Pattern="ShortTime" IsVisibleRepeatButton ="True" IsButtonPopUpEnabled="False" Grid.Row="6" Margin="10 2 10 10"/>
-                                            <DatePicker x:Name="addendmonth" materialDesign:HintAssist.Hint="Fim" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" SelectedDateFormat="Short" Grid.Row="8" Margin="10 2 10 10" Height="25" />
-                                            <shared:DateTimeEdit x:Name="addendtime" FontFamily="Segoe UI" FontSize="12" Pattern="ShortTime" IsVisibleRepeatButton ="True" IsButtonPopUpEnabled="False" Grid.Row="10" Margin="10 2 10 10"/>
-                                            <shared:DateTimeEdit x:Name="editendtime" FontSize="12" FontFamily="Segoe UI" DateTime="{Binding Appointment.EndTime}" Pattern="ShortTime" IsVisibleRepeatButton ="True" IsButtonPopUpEnabled="False" Grid.Row="10" Margin="10 2 10 10"/>
-                                            <TextBox x:Name="where" materialDesign:HintAssist.Hint="Onde"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"   Text="{Binding Appointment.Location,Mode=OneWay}" Grid.Row="12" Margin="10 2 10 10"/>
-                                            <StackPanel Grid.Row="13" x:Name="showmorepanel" Grid.RowSpan="10">
-
-                                                <ComboBox materialDesign:HintAssist.Hint="Lembrete" Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectedItem="{Binding Appointment.ReminderTime,Mode=OneWay}" x:Name="reminder" Margin="10 2 10 10" >
-                                                <ComboBoxItem Content="SOLTEIRO">
-                                                    <ComboBoxItem.Tag>
-                                                        <system:String>SOLTEIRO</system:String>
-                                                    </ComboBoxItem.Tag>
-                                                </ComboBoxItem>
-                                                </ComboBox>
-                                                <ComboBox x:Name="AddReminder" materialDesign:HintAssist.Hint="Lembrete" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="10 2 10 10" >
-                                                <ComboBoxItem Content="SOLTEIRO">
-                                                    <ComboBoxItem.Tag>
-                                                        <system:String>SOLTEIRO</system:String>
-                                                    </ComboBoxItem.Tag>
-                                                </ComboBoxItem>
-                                                </ComboBox>
-
-                                                <ComboBox materialDesign:HintAssist.Hint="Tipo Compromisso" Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectedItem="{Binding Appointment.AppointmentType,Mode=OneWay}" Margin="10 2 10 10" x:Name="apptype" >
-                                                    <ComboBoxItem Content="SOLTEIRO">
-                                                        <ComboBoxItem.Tag>
-                                                            <system:String>SOLTEIRO</system:String>
-                                                        </ComboBoxItem.Tag>
-                                                    </ComboBoxItem>
-                                                    <ComboBoxItem Content="SOLTEIRO">
-                                                        <ComboBoxItem.Tag>
-                                                            <system:String>SOLTEIRO</system:String>
-                                                        </ComboBoxItem.Tag>
-                                                    </ComboBoxItem>
-                                                    <ComboBoxItem Content="SOLTEIRO">
-                                                        <ComboBoxItem.Tag>
-                                                            <system:String>SOLTEIRO</system:String>
-                                                        </ComboBoxItem.Tag>
-                                                    </ComboBoxItem>
-                                                </ComboBox>
-                                            </StackPanel>
-                                        </Grid>
-                                    </ScrollViewer>
-                                    <Border Grid.Column="1" Background="White">
-                                        <Grid Margin="35 40">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="0.1*"/>
-                                                <RowDefinition Height="0.8*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="0.6*"/>
-                                                <ColumnDefinition Width="0.4*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <TextBox x:Name="sub"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Assunto" Text="{Binding Appointment.Subject,Mode=OneWay}" >
-                                                
-                                            </TextBox>
-                                            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
-                                                <Button x:Name="save"  ToolTip="Salvar" Margin="5 0" >
-                                                    <materialDesign:PackIcon Kind="ContentSave" />
-                                                </Button>
-                                                <Button x:Name="delete"  ToolTip="Deletar" Margin="5 0" >
-                                                    <materialDesign:PackIcon Kind="Delete" />
-                                                </Button>
-                                                <Button x:Name="close"  ToolTip="Fechar" Margin="5 0 0 0" >
-                                                    <materialDesign:PackIcon Kind="CloseBoxOutline" />
-                                                </Button>
-                                            </StackPanel>
-
-                                            <TextBox x:Name="notes" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Descrição" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Row="2" Grid.ColumnSpan="2"  Text="{Binding Appointment.Notes}" />
-                                        </Grid>
-                                    </Border>
-                                </Grid>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
             <ResourceDictionary.MergedDictionaries>
                 
                 <!-- note you only need bring in these extra resource dictionaries when using non-default styles, so only bring them into your controls where the default style is not what you want -->
@@ -285,8 +163,8 @@
 
        <!--Dashboard-->
 
-        <Grid Margin=" 5 20 5 5">
-            <!--<syncfusion:SfSchedule AppointmentEditorOpening="no"  ScheduleDoubleClick="ClickCalendario" x:Name="Schedule"   Margin="10"  WorkEndHour="22" WorkStartHour="6"  
+        <!--<Grid Margin=" 5 20 5 5">
+            --><!--<syncfusion:SfSchedule AppointmentEditorOpening="no"  ScheduleDoubleClick="ClickCalendario" x:Name="Schedule"   Margin="10"  WorkEndHour="22" WorkStartHour="6"  
                                    ScheduleType="WorkWeek"  TimeInterval="ThirtyMin" IntervalHeight="30" Height="500" TimeMode="TwentyFourHours" TimeLineViewRowCount="-10" AllowEditing="False"  >
                 <syncfusion:SfSchedule.AppointmentMapping>
                     <syncfusion:ScheduleAppointmentMapping/>
@@ -299,32 +177,7 @@
                 <RadioButton Style="{StaticResource MaterialDesignRaisedButton}" x:Name="WorkWeek" Content="Semana de Trabalho" Click="Btn_ScheduleType_Click" Width="170" Height="25" Background="#F3F4F4" BorderBrush="#868686" Foreground="#2C2C2C" Margin="5 0 0 -40" />
                 <RadioButton Style="{StaticResource MaterialDesignRaisedButton}" x:Name="Month" IsChecked="True" Content="Mês" Click="Btn_ScheduleType_Click" Width="60" Height="25" Background="#F3F4F4" BorderBrush="#868686" Foreground="#2C2C2C" Margin="5 0 0 -40"/>
                 <RadioButton Style="{StaticResource MaterialDesignRaisedButton}" x:Name="TimeLine" Content="Timeline" Click="Btn_ScheduleType_Click" Width="90" Height="25" Background="#F3F4F4" BorderBrush="#868686" Foreground="#2C2C2C" Margin="5 0 20 -40"/>
-            </StackPanel>-->
-            <syncfusion:SfSchedule x:Name="Schedule" ScheduleType="Week" Height="500" ShowAppointmentNavigationButtons="True" IsHighLightWorkingHours="True"  
-                                   Background="White" TimeInterval="OneHour" Margin="20" >
-                <syncfusion:SfSchedule.AppointmentTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Rectangle Fill="{Binding AppointmentBackground}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="0.3*" />
-                                    <RowDefinition Height="0.7*" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Margin="10,2,0,0" Text="{Binding Subject}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" Foreground="White" FontWeight="Normal" FontFamily="Segoe UI"/>
-                                <Image Source="{Binding AppointmentImageURI}" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="70" Width="70" />
-                                <TextBlock Text="{Binding AppointmentTime}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" Foreground="White" FontWeight="Normal" FontFamily="Segoe UI" TextWrapping="NoWrap"/>
-                                
-                            </Grid>
-                        </Grid>
-                    </DataTemplate>
-                </syncfusion:SfSchedule.AppointmentTemplate>
-            </syncfusion:SfSchedule>
+            </StackPanel>--><!--
             <StackPanel  Height="45" HorizontalAlignment="Right"  VerticalAlignment="Top" Orientation="Horizontal">
                 <RadioButton Style="{StaticResource MaterialDesignRaisedButton}" x:Name="Day" Content="Dia" Click="Btn_ScheduleType_Click" Width="60" Height="25" Background="#F3F4F4" BorderBrush="#868686" Foreground="#2C2C2C" Margin="5 0 0 -40"/>
                 <RadioButton Style="{StaticResource MaterialDesignRaisedButton}" x:Name="Week" Content="Semana" Click="Btn_ScheduleType_Click" Width="90" Height="25" Background="#F3F4F4" BorderBrush="#868686" Foreground="#2C2C2C" Margin="5 0 0 -40" />
@@ -333,7 +186,7 @@
                 <RadioButton Style="{StaticResource MaterialDesignRaisedButton}" x:Name="TimeLine" Content="Timeline" Click="Btn_ScheduleType_Click" Width="90" Height="25" Background="#F3F4F4" BorderBrush="#868686" Foreground="#2C2C2C" Margin="5 0 20 -40"/>
             </StackPanel> 
 
-            <Popup x:Name="RadialPopup" shared:SkinStorage.VisualStyle="Metro" Placement="MousePoint" AllowsTransparency="True" IsOpen="False">
+            --><!--<Popup x:Name="RadialPopup" shared:SkinStorage.VisualStyle="Metro" Placement="MousePoint" AllowsTransparency="True" IsOpen="False">
                 <radialmenu:SfRadialMenu x:Name="radialMenu" RimBackground="#FF28A5DB" RimRadiusFactor="0.9" 
                                          IsOpen="False" Background="White" BorderBrush="Green" Padding="5"
                                          RadiusX="100" RadiusY="100"
@@ -399,11 +252,9 @@
                         </radialmenu:SfRadialMenuItem.Header>
                     </radialmenu:SfRadialMenuItem>
                 </radialmenu:SfRadialMenu>
-            </Popup>
+            </Popup>--><!--
 
-            <local:CustomEditor x:Name="customeEditor" Style="{StaticResource Editor}" shared:SkinStorage.VisualStyle="Metro"/>
-
-        </Grid>
+        </Grid>-->
 
         
 
