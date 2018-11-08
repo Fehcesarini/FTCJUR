@@ -53,7 +53,7 @@ namespace ViewWPF.Inicializacao
                     Definicoes.CNPJ = oXML.SelectSingleNode("SerialKey").ChildNodes[0].InnerText;
                     Definicoes.serial = oXML.SelectSingleNode("SerialKey").ChildNodes[1].InnerText;
                     Definicoes.macadress = oXML.SelectSingleNode("SerialKey").ChildNodes[2].InnerText;
-
+                    string nomemac = getMacAddress();
                     if (Definicoes.macadress == getMacAddress())
                     {
                         WLogin login = new WLogin();
