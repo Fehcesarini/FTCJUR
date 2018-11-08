@@ -79,7 +79,7 @@ namespace AcessoBancoDados
                 try
                 {
                     connectionSatring = @"Persist Security Info=False;" +
-                                          "server=" + server + ";database=dbjuridico;server=" + server + ";" +
+                                          "server=" + server + ";port=41890;" + ";database=ftcjur;server=" + server + ";" +
                                           "uid=" + usuario + ";pwd=" + senha + ";";
                    
 
@@ -100,7 +100,7 @@ namespace AcessoBancoDados
                 {
                     connectionSatring = @"server=" + server +
                                          ";port=41890;" +
-                                         "database=serialkey;" +
+                                         "database=ftcjurserial;" +
                                          "uid=" + usuario + ";pwd=" + senha + ";";
 
 

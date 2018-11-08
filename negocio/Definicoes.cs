@@ -22,14 +22,14 @@ namespace Negocio
 
         // Definições do Banco de Dados.
         public static int banco = 1;
-        public static string server = "localhost";
-        public static string usuario = "root";
-        public static string senha = "admin";
+        public static string server = "mysql642.umbler.com";
+        public static string usuario = "feh126";
+        public static string senha = "feh126331";
         
         //Definições Banco de dados Serial Key
         public static int bancoSerial = 2;
-        public static string serverSerial = "mysql873.umbler.com";
-        public static string usuarioSerial = "feh126";
+        public static string serverSerial = "mysql642.umbler.com";
+        public static string usuarioSerial = "feh126331";
         public static string senhaSerial = "Thami_feh11";
 
         //Variaveis validacao sistemas 
