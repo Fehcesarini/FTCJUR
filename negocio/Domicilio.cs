@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Negocio
+{
+    public class Domicilio
+    {
+        // Essas informações são genericas.
+        public string logradouro { get; set; }
+        public string numero { get; set; }
+        public string cep { get; set; }
+        public string bairro { get; set; }
+        public string complento { get; set; }
+
+        
+    }
+}

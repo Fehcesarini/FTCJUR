@@ -1,0 +1,68 @@
+﻿<Window x:Class="ViewWPF.Configuracao.WConfiguracao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ViewWPF.Configuracao"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:wpfExample="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialMenu="clr-namespace:MaterialMenu;assembly=MaterialMenu"
+        mc:Ignorable="d"
+        Title="WConfiguracao" Height="300" Width="1024" HorizontalContentAlignment="Stretch" WindowStartupLocation="CenterScreen"  WindowState="Maximized" Background="Transparent" AllowsTransparency="True" WindowStyle="None" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="ForeGroundMenu" Color="White"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- note you only need bring in these extra resource dictionaries when using non-default styles, so only bring them into your controls where the default style is not what you want -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Slider.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid Background="Black" Opacity="0.8" >
+            
+        </Grid>
+
+        <StackPanel Height="300" Background="#bbb4c1">
+            <!--Barra Superior -->
+            <Grid Background="#220638"   Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="0.09*"/>
+                    <ColumnDefinition  Width="0.09*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Foreground="#af6505" Kind="Windows" Grid.Column="0"  Height="40" Width="40" Margin="15 5 5 5" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <materialDesign:PackIcon Foreground="#af6505" MouseDown="PackIcon_MouseDown" Kind="ArrowLeftBold" Grid.Column="1"  Height="40" Width="40" Margin="15 5 5 5" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <TextBlock Foreground="White" FontSize="24"  Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Margin="10">
+                Configurações
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Center"  VerticalAlignment="Center" Height="250">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition  Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid MouseDown="Grid_MouseDown" Margin="10"  Grid.Column="0" Background="#220638" Width="140" Height="140">
+                    <StackPanel>
+                        <wpfExample:TextBlock Foreground="{DynamicResource ForeGroundMenu}" Text="CARGOS"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="13" Margin="0 2" />
+                        <materialDesign:PackIcon  Foreground="{DynamicResource  PrimaryHueMidBrush}" Kind="TagTextOutline" Grid.Column="4" Height="80" Width="80" Margin="5 15 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+                <Grid Margin="10" MouseDown="Grid_MouseDown_1" Grid.Column="1" Background="#220638" Width="140" Height="140">
+                    <StackPanel>
+                        <wpfExample:TextBlock Foreground="{DynamicResource ForeGroundMenu}" Text="FUNCIONARIOS"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="13" Margin="0 2" />
+                        <materialDesign:PackIcon  Foreground="{DynamicResource  PrimaryHueMidBrush}" Kind="HumanMaleFemale" Grid.Column="4" Height="80" Width="80" Margin="5 15 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+
+
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Window>

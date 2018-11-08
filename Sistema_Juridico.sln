@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{04F6061A-9C0C-493B-A74E-82C6DE2F4894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessoBancoDados", "AcessoBancoDados\AcessoBancoDados.csproj", "{6E179B4B-B11E-40ED-80F6-78624A9097E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewWPF", "ViewWPF\ViewWPF.csproj", "{D488AFA6-7B3B-4676-AB7D-97A50CABCCFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04F6061A-9C0C-493B-A74E-82C6DE2F4894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F6061A-9C0C-493B-A74E-82C6DE2F4894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F6061A-9C0C-493B-A74E-82C6DE2F4894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F6061A-9C0C-493B-A74E-82C6DE2F4894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E179B4B-B11E-40ED-80F6-78624A9097E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E179B4B-B11E-40ED-80F6-78624A9097E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E179B4B-B11E-40ED-80F6-78624A9097E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E179B4B-B11E-40ED-80F6-78624A9097E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D488AFA6-7B3B-4676-AB7D-97A50CABCCFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D488AFA6-7B3B-4676-AB7D-97A50CABCCFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D488AFA6-7B3B-4676-AB7D-97A50CABCCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D488AFA6-7B3B-4676-AB7D-97A50CABCCFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

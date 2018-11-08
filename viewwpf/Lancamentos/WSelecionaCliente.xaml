@@ -1,0 +1,86 @@
+﻿<Window x:Class="ViewWPF.Lancamentos.WSelecionaCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ViewWPF.Lancamentos"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:wpfExample="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialMenu="clr-namespace:MaterialMenu;assembly=MaterialMenu"
+        mc:Ignorable="d"
+        Title="WSelecionaCliente" Height="500" Width="1024" HorizontalContentAlignment="Stretch" WindowStartupLocation="CenterScreen"  WindowState="Maximized" Background="Transparent" AllowsTransparency="True" WindowStyle="None" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="ForeGroundMenu" Color="White"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- note you only need bring in these extra resource dictionaries when using non-default styles, so only bring them into your controls where the default style is not what you want -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Slider.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid Background="Black" Opacity="0.8" >
+
+        </Grid>
+
+        <StackPanel Height="500" Background="#bbb4c1">
+            <!--Barra Superior -->
+            <Grid Background="#220638"   Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="0.09*"/>
+                    <ColumnDefinition  Width="0.09*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Foreground="#af6505" Kind="Windows" Grid.Column="0"  Height="40" Width="40" Margin="15 5 5 5" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <materialDesign:PackIcon Foreground="#af6505" MouseDown="PackIcon_MouseDown" Kind="ArrowLeftBold" Grid.Column="1"  Height="40" Width="40" Margin="15 5 5 5" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <TextBlock Foreground="White" FontSize="24"  Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Margin="10">
+                Selecione o Cliente para Prosseguir
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0"  HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Margin="0 0 40 0"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Grid.Column="0" HorizontalAlignment="Left" Width="300" Name="txtPesquisa">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Margin="-2 -10 0 0">
+                                <!--<materialDesign:PackIcon Kind="AccessPoint" />-->
+                                <TextBlock>Pesquisa</TextBlock>
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </TextBox>
+                    <Button Click="btnPesquisa_Click" Grid.Column="1" Width="100" HorizontalAlignment="Left">Pesquisar</Button>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <DataGrid Margin="15" Width="700" Height="300"  MouseDown="dgvCliente_MouseDown" ItemsSource="{Binding}" Name="DgvCliente" />
+                </Grid>
+                <Grid Grid.Row="2" VerticalAlignment="Center" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Margin="10" Click="BtnSelecionar_click" Grid.Column="0" Width="100" HorizontalAlignment="Center">Selecionar</Button>
+                    <Label Margin="10" Grid.Column="1" Content="Cliente Selecionado" Name="LabelClienteSelecionado" FontWeight="Bold" FontSize="14"/>
+                    <Button Margin="10" IsEnabled="False" Name="btnnovocliente" Click="btnnovocliente_click" Grid.Column="2" Width="100" HorizontalAlignment="Center">Novo Cliente</Button>
+                </Grid>
+
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Window>
+
